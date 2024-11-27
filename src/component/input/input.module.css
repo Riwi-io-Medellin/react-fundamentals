@@ -1,0 +1,14 @@
+.input__container {
+  border-radius: 5px;
+  border-width: 0px;
+  height: 40px;
+  width: 130px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
