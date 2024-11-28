@@ -1,4 +1,3 @@
-import Container from "./pages/container/Container"
 import { Layout } from "./pages/layout/Layout"
 
 const App = () => {

@@ -1,9 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Input } from '../../component/input/Input'
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useContext, useState } from 'react'
 import style from './container.module.css'
+import { AuthContext } from '../../context/AuthContext'
 
 const Container = () => {
+
+  const {user, login} = useContext(AuthContext)
+
+  
 
   const [form, setForm] = useState({
     name: '',
@@ -21,7 +26,8 @@ const Container = () => {
   
   const onSubmit = async (e: any) => {
     e.preventDefault()
-     
+    login('Riwi')
+  
     if(!!form.name || !!form.email || !!form.city || !!form.age) {
       alert('Tienes campos pendiente por llenar')
       return
@@ -32,7 +38,6 @@ const Container = () => {
       city: '',
       email: '',
     })
-    e.reset()
   }
 
   return (
@@ -73,6 +78,7 @@ const Container = () => {
         <button type='submit'>enviar</button>    
       </form>
       {JSON.stringify(form, null, 2)}
+      {JSON.stringify(user, null, 2)}
     </div>
   )
 }
